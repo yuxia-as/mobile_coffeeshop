@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Coffee Shop</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <script src="js/zepto.js"></script>
+  <script src="js/event.js"></script>
+  <script src="js/touch.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/fx.js"></script>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/hxrouter.js"></script>
+	
+</head>
+<body>
+  <!-- header part -->
+  <header>
+    <h1><i class="fas fa-bars" id="homeicon"></i><img src="img/coffeelogo.jpg" /><span>Coffee Shop</span></h1>
+  </header>
+  <!-- hidden navigation part -->
+  <section class="btnHome">
+    <p><i class="fas fa-user"></i><span id="username2" ></span></p>
+    <hr>
+    <p><a id="product"><img src="img/coffeelogo.jpg" /><span>Products</span></a></p>
+    <p><a id="order"><img src="img/cartlogo.jpg" /><span>Orders</span></a></p>
+    <p><a id="coupon"><img src="img/couponlogo.jpg" /><span>Coupons</span></a></p>
+    <p><a id="homeaddress"><img src="img/homeicon.png" /><span>Home</span></a></p>
+    <hr>
+    <p><i class="fas fa-phone"></i><span>888-1234-5678</span></p>
+  </section>
+  <!-- welcome page -->
+  <section>
+    <section class="welcome">
+      <p>WELCOME</p>
+    </section>
+    <!-- sign up/sign in page -->
+    <section class="sign_selection">
+      <p>Welcome to Coffee Shop</p>
+      <button>SIGN UP <i class="fas fa-arrow-right"></i></button>
+      <button>SIGN IN <i class="fas fa-arrow-right"></i></button>
+    </section>
+    <!-- sign up page -->
+    <section class="sign_up">
+      <div class="form">
+        <label for="name"></label>
+        <input type="text" placeholder="Name" id="name"/>
+        <label for="email"></label>
+        <input type="email" placeholder="Email" id="email" />
+        <label for="password1"></label>
+        <input type="password" placeholder="Password" id="pwd1" />
+        <label for="password2"></label>
+        <input type="password" placeholder="Password again" id="pwd2" />
+        <input type="submit" value="SIGN UP" id="btnSignupSubmit" />
+        <span id="signup_msg"></span>
+      </div>
+    </section>
+    <!-- sign in page -->
+    <section class="sign_in">
+      <div class="form">
+        <label for="email"></label>
+        <input type="email" placeholder="Email" id="email_signin" />
+        <label for="password"></label>
+        <input type="password" placeholder="Password" id="pwd_signin" />
+        <P id="forget">Forget your password?</P>
+        <input type="submit" value="SIGN IN" id="btnSigninSubmit" />
+        <span id="sign_msg"></span>      
+      </div>
+    </section>
+    <!-- retrieve password page -->
+    <section class="retrieve_password">
+      <div class="form">
+        <label for="email"></label>
+        <input type="email" placeholder="Email" id="email_retrieve" />
+        <P>Retrieve password through your email</P>        
+        <input type="submit" value="SUBMIT" id="retrievePwdThEmail" />
+        <div id="retrieve_msg"></div>      
+      </div>
+    </section>
+    <!-- main page -->
+    <section class="main">
+      <p>WELCOME</p>
+      <p><i class="fas fa-user"></i><span id="username"></span></p>
+      <p>Thanks for stoping by!</p>
+      <p>Try our new flavored</p>
+      <p>Iced Lemon Tea</p>
+      <img src="img/iced_tea.jpg" />
+      <button id="myLogout">Log  Out</button>
+    </section>
+    <!-- product list page -->
+    <section class="product_list">
+      <ul>
+       
+      </ul>
+    </section>
+    <!-- single product page -->
+    <section class="product_single">
+      
+    </section>
+    <!-- order page -->
+    <section class="order_detail">
+       
+    </section>
+    <!-- coupon page -->
+    <section class="coupon_list">
+      <ul>
+        
+      </ul>
+    </section>
+  
+  </section>
+ 
+</body>
+<script src="app2.js"></script>
+</html>

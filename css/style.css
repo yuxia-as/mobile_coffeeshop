@@ -1,0 +1,359 @@
+body{
+	background:  url(../img/coffee-bg.jpg) 0 0 repeat;
+	background-color:rgba(194, 210, 237,0.5);
+	background-size:cover;  
+}
+header{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	background: #1559c6;
+	color:#fff;	
+}
+header img{
+	width:10%;
+	border-radius: 50%;
+}
+header span{
+	padding-left: 2%;
+}
+header i{
+	position: absolute;
+	left: 8px;
+	top:12px;
+}
+.welcome p{
+	width:100%;
+	margin-top:50%;
+	color:#dd0dad;
+	text-align: center;
+	font-size: 45px;
+	-webkit-animation: -webkit-roll 2s ease 0s 5;
+	animation: roll 2s ease 0s 5;
+}
+@-webkit-keyframes -webkit-roll{
+	from{transform:rotate(0deg);}
+	to{transform:rotate(360deg);}			
+}
+@keyframes roll{
+	from{transform:rotate(0deg);}
+	to{transform:rotate(360deg);}
+}
+/*#sign_in{width:100%;margin-top:10%;}*/
+
+.sign_selection{
+	margin-top:20%;
+	 
+}
+.sign_selection p{
+	width:100%;
+	color:#dd0dad;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}
+.sign_selection button{
+	display: block;
+	margin-top:20%; 
+	width: 100%;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	background: #5e61bc;
+	color:#fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+.sign_selection button i{
+	padding-left:10%;
+}
+
+.sign_up{
+	margin-top:5%;
+}
+
+.form{
+	width: 100%;
+	text-align: center;
+}
+
+.form input{
+	margin-top:10%;
+	padding-left: 10px;	
+	width: 90%;
+	height:50px;
+	line-height: 50px;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 10px 10px;
+	/*text-align: center;*/ 
+}
+.form input[type="submit"]{
+	width:100%;
+	font-size: 18px;
+	font-weight: bold;
+	color:#000;
+	border-radius: 0;
+	background:#5e61bc;
+}
+.form span{
+	margin-top:10%;
+	color:red;
+}
+
+.sign_in{
+	margin-top:10%;
+}
+.sign_in form input{
+	margin-top:20%; 
+}
+.sign_in p{
+	margin-top: 5%;
+	color:#f00;
+	font-weight: bold;
+}
+.retrieve_password{
+	margin-top:15%;
+}
+.retrieve_password p{
+	margin-top: 5%;
+	color:#f00;
+	font-size: 17px;
+	font-weight: bold;
+}
+.retrieve_password button{
+	margin-top: 8%; 
+	padding:2% 3%;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 21px;
+}
+.main{
+	margin-top: 10%;
+	text-align: center;
+}
+.main p{
+	width:100%;
+	margin-top:10%;
+	color:#5e61bc;
+	/*text-align: center;*/
+	font-weight: bold;
+	font-size: 25px; 
+}
+.main p:first-of-type{
+	color:#dd0dad;
+	font-size: 40px;	
+}
+.main p:nth-of-type(2){
+	color:#1559c6;
+	font-size: 30px;
+}
+.main p:nth-of-type(2) span{
+	padding-left: 2%;
+}
+.main p:last-of-type{
+	margin-top:5%; 
+}
+.main img{
+	margin:0 auto;
+	display:block;
+	margin-top: 10%;
+	width:50%;
+	height: auto;
+}
+.main button{
+	margin-top: 8%; 
+	padding:2% 3%;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	font-size: 25px;
+}
+.btnHome{
+	width:80%;
+	z-index: 100;
+	position: absolute;
+	left:-80%;
+	top:60px;
+	padding: 15px 20px;
+	background: #fff;
+}
+
+.btnHome p{
+	margin-top:5%; 
+}
+.btnHome p:first-of-type{
+	font-size: 30px;
+	color:#5e61bc;
+}
+.btnHome p span{
+	padding-left:5%; 
+}
+.btnHome p img{
+	width: 20%;
+}
+.btnHome p img:first-of-type{
+	border-radius: 50%;
+}
+.btnHome p:last-of-type{
+	color:#5e61bc;
+	padding-bottom: 5%;
+}
+
+/*product page*/
+.product_list{
+	margin-top:2%;
+} 
+.product_list ul{
+	width:100%;
+}
+.product_list ul li{
+	/*display: inline-block;*/
+	margin-top:5%; 
+	width:50%;
+	text-align: center;
+	float:left;
+}
+.product_list ul li img{
+	width:80%;
+	display: block;
+	margin: 0 auto;
+}
+.product_list ul li span{
+	display: block;
+}
+/*list single product*/
+.product_single{
+	margin-top:20%;
+}
+.product_single div{
+	margin: 0 auto;
+	width:75%;
+	background: white;
+	text-align: center;
+	position: relative; 
+}
+.product_single div i{
+	position: absolute;
+	display: block;
+	right: 0;
+	top:0;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	background: #fff;
+	text-align:center;
+	font-size: 25px;
+}
+.product_single div img{
+	display: block;
+	width: 100%;
+	margin-bottom: 3%; 
+}
+.product_single div span{
+	/*height: 40%;
+	line-height: 40%;*/
+	font-weight: bold;
+}
+.product_single div span:first-of-type{
+	padding-right: 8%; 
+}
+.product_single div button{
+	display: block;
+	margin-top:3%; 
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background:#5e61bc;
+	color: #fff;
+	font-weight: bold;
+	font-size: 30px;
+}
+/*coupon list page*/
+.coupon_list{
+	margin-top:2%;
+} 
+.coupon_list ul{
+	width:100%;
+}
+.coupon_list ul li{
+	margin-top:10%;
+	width: 100%;
+	padding:1% 4%;
+}
+.coupon_list ul li img{
+	width: 20%;
+}
+.coupon_list ul li span{
+	padding-left: 2%;
+	font-weight: bold;
+}
+.coupon_list ul li button{
+	margin-top:2%; 
+	float:right;
+	background: #1559c6;
+	color:#fff;
+	border-radius: 5px;
+	font-size: 20px;
+	padding:1% 2%;
+	/*width: 5%;*/ 
+}
+.order_detail{
+	margin-top:8%;	
+	color:#a87d28;
+	font-size: 20px;
+}
+.order_detail div{
+	margin-top:18%; 
+	width: 100%;
+	text-align:center;
+	color: red;
+	font-size:25px;
+	font-weight: bold;
+}
+.order_detail table{
+	width: 85%;
+	margin:0 10%; 
+}
+.order_detail table tbody{
+	width:100%;
+}
+.order_detail table tbody tr{
+	width: 100%;
+	display: flex;	
+}
+.order_detail table tbody tr td{
+	flex:1;	
+}
+.order_detail table:last-of-type tbody tr:last-of-type{
+	font-weight: bold;
+	font-size: 22px;	
+}
+.order_detail table:last-of-type tbody tr:nth-last-of-type(2) td{
+	border-bottom: 1px solid black;	
+}
+.order_detail table tbody tr td{
+	padding-top: 8%;
+} 
+.order_detail table tbody tr td button{
+	color:#fff;
+	background:#5e61bc;
+	padding: 5% 7%;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+#orderBtn{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 15%;
+	font-size: 25px;
+	font-weight: bold;
+	color:#fff;
+	background:#5e61bc;
+}
