@@ -51,13 +51,14 @@ function getUserFromCookie(){
         var user = getUserFromCookie();
         console.log(user);
         $.ajax({
-          url:'http://127.0.0.1:8800/checkuser',
+          url:'http://127.0.0.1:8000/checkuser',
           type:'post',
           data:{name:user},
           success:function(data){
-            var datajs = JSON.parse(data);
-            console.log(datajs);
-            if(datajs.msg){
+            console.log(data.msg);
+            // var datajs = JSON.parse(data);
+            // console.log(datajs);
+            if(data.msg){
               $('#username').html(user);
               $('#username2').html(user);
               $('.main').show().siblings().hide();
@@ -106,15 +107,15 @@ function getUserFromCookie(){
       var newUser = {'name':user,'email':email,'password':pwd1};
       //send user info to server
       $.ajax({
-        url:'http://127.0.0.1:8800/signup',
+        url:'http://127.0.0.1:8000/signup',
         type:'post',
         data:newUser,
         success:function(data){
-          var datajs = JSON.parse(data);
+          
           //if this user has been registered
-          if(datajs.msg=="registered"){
+          if(data.msg=="registered"){
             $('#signup_msg').html('Tis user name has been registered.');
-          }else if(datajs.msg=="success"){
+          }else if(data.msg=="success"){
             //userArr.push(newUser.name);
             //register this user means data has been write into the database
             myLogin(newUser.name);
@@ -128,42 +129,6 @@ function getUserFromCookie(){
     }
 
   })
-  //go move retrieve password page
-  $('#forget').on('tap',function(){
-    $('.retrieve_password').show().siblings().hide();
-  })
-
-  $('#retrievePwdThEmail').on('tap',function(){
-    //get email address
-    var email = $('#email_retrieve').val();
-    //console.log(email);
-    $.ajax({
-      url:'http://127.0.0.1:8800/forget',
-      type:'post',
-      data:{email:email},
-      success:function(data){
-        //receive data as msg:true/false
-        var datajs = JSON.parse(data);
-        //if true, will receive an email and then can go back to sign in page
-        if(datajs.msg){
-          $('#retrieve_msg').html('<p>you\'ll receive your password, please go back to sign in.</p><button id="return1">Go Back to Sign In</button>');
-        //if false, can re-enter the email address, or go back to sign up page
-        }else{
-          $('#retrieve_msg').html('<p>We don\'t have this email address in our account, please try again</p><p>or</p><button id="return2">Go Back to Sign Up</button>');
-        }
-        //go to sign in page
-        $('#return1').on('tap',function(){
-          $('.sign_in').show().siblings().hide();
-        })
-        //go to sign up page
-        $('#return2').on('tap',function(){
-          $('.sign_up').show().siblings().hide();
-        })
-      }
-    })
-  })
-
-
 
 
 //sign in page with validation
@@ -173,13 +138,12 @@ function getUserFromCookie(){
     var pwd = $.trim($('#pwd_signin').val());
     //send data to server and retrieve user name
     $.ajax({
-      url:'http://127.0.0.1:8800/signin',
+      url:'http://127.0.0.1:8000/signin',
       type:'post',
       data:{email:email,password:pwd},
       success:function(data){
-        var datajs = JSON.parse(data);
-        //console.log(datajs);
-        var user=datajs.user;
+        //receive user info from server
+        var user=data.user;
         //if find a user
         if(user){
           myLogin(user);
@@ -222,12 +186,12 @@ function getUserFromCookie(){
 $('#product').on('tap',function(){
   hideNav();
   $.ajax({
-    url:'http://127.0.0.1:8800/productList',
+    url:'http://127.0.0.1:8000/productList',
     type:'get',
     success:function(data){
-      var datajs = JSON.parse(data);
-      console.log(datajs);
-      datajs.forEach(function(item){
+      //retrieve product data from server
+      console.log(data);
+      data.forEach(function(item){
         var html = '<li><a href="#/product/'+item.id+'"><img src="'+item.imgsrc+'" alt=""><span>'+item.product+'</span><span>'+item.price+'</span></a></li>';
         $('.product_list ul').append(html);
       })
@@ -244,12 +208,11 @@ hxRouter.addRoute({
         var myid=hxRouter.getGroups(this.pattern).id;
         //get selected product data info through served by his id
         $.ajax({
-          url:'http://127.0.0.1:8800/findProduct',
+          url:'http://127.0.0.1:8000/findProduct',
           type:'post',
           data:{id:myid},
           success:function(data){
-           var datajs = JSON.parse(data);
-           var myObj =  datajs[0];
+           var myObj =  data[0];
            //pass data to html code to show single product
             var $mydiv = $('<div><img src="'+myObj.imgsrc+'" alt=""><a href="#/product"><i id="close">&times;</i></a><span>'+myObj.product+'</span><span>'+myObj.price+'</span><button id="add_product">Add</button></div>');
         
@@ -280,13 +243,11 @@ $('#coupon').on('tap',function(){
   //loop through coupon data to load coupon list
 
   $.ajax({
-    url:'http://127.0.0.1:8800/couponList',
+    url:'http://127.0.0.1:8000/couponList',
     type:'get',
     success:function(data){
-      //receive coupon data and convert it to array
-      var datajs = JSON.parse(data);
       //pass data to html
-      datajs.forEach(function(item){
+      data.forEach(function(item){
         var html ='<li data-id="'+item.id+'"><img src="img/couponlogo.jpg" alt=""><span>'+item.coupon+'</span><span>'+item.price+'</span><button class="addCoupon">Add</button></li>';
         $('.coupon_list ul').append(html);
       })
@@ -296,7 +257,7 @@ $('#coupon').on('tap',function(){
       $('.addCoupon').on('tap',function(){
         //get coupon id which is a string
         var coupon_id = $(this).parent().attr('data-id');
-        var myCoupon = datajs.filter(function(item){
+        var myCoupon = data.filter(function(item){
           return coupon_id == item.id.toString();
         })
       //check the couponArr to filter out the coupon that has been selected  

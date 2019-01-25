@@ -5,6 +5,7 @@
 	<title>Coffee Shop</title>
 	<!-- Include meta tag to ensure proper rendering and touch zooming -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -13,12 +14,19 @@
   <script src="js/event.js"></script>
   <script src="js/touch.js"></script>
   <script src="js/ajax.js"></script>
-  <script src="js/fx.js"></script>
-  
+  <script src="js/fx.js"></script>  
   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="js/hxrouter.js"></script>
 	
+  <!-- Add to home screen for Safari on iOS -->
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Coffee Shop">
+  <link rel="apple-touch-icon" href="img/icon/logo-144.png"> -->
+  <!-- <link rel="apple-touch-icon" href="img/icon/logo-152.png"> -->
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
 </head>
 <body>
   <!-- header part -->
@@ -34,7 +42,9 @@
     <p><a id="coupon"><img src="img/couponlogo.jpg" /><span>Coupons</span></a></p>
     <p><a id="homeaddress"><img src="img/homeicon.png" /><span>Home</span></a></p>
     <hr>
-    <p><i class="fas fa-phone"></i><span>888-1234-5678</span></p>
+    <!-- <p><i class="fas fa-phone"></i><span>888-1234-5678</span></p> -->
+    <p><i class="fas fa-phone"></i><a href="tel:+15702347249"><span>click to call us</span></a></p>
+    
   </section>
   <!-- welcome page -->
   <section>
@@ -118,5 +128,6 @@
   </section>
  
 </body>
-<script src="app2.js"></script>
+<script src="app.js"></script>
+<script src="client.js"></script>
 </html>
